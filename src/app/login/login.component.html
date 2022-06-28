@@ -1,0 +1,43 @@
+<div class="container d-flex justify-content-center my-5">
+  <div class="row my-2 mx-2 main">
+
+
+      <div>
+          <img src="https://www.redditstatic.com/accountmanager/bbb584033aa89e39bad69436c504c9bd.png"width="100%" height="100%">
+      </div>
+
+
+      <div class="form">
+        <div class="centerDiv">
+          <h2>Log in</h2>
+        </div>
+
+          <form>
+                  <div>
+                      <input name="username" [(ngModel)] = "newUser.username" type="text" placeholder="Username">
+                  </div>
+
+                  <div >
+                      <input name="password" [(ngModel)] = "newUser.password" type="password" placeholder="Password">
+                  </div>
+
+                  <div *ngIf="wrongUsernameOrPass" class="text-danger">
+                    <small>Invalid username or password!</small>
+                  </div>
+
+                  <div class="centerDiv">
+                      <button type="submit" (click)="login()">Log in</button>
+                  </div>
+
+                  <div class="centerDiv">
+                      <p>New to Reddit?<a href="#" routerLink="/signUp"> SIGN UP</a></p>
+                  </div>
+
+          </form>
+      </div>
+  </div>
+</div>
+
+
+
+

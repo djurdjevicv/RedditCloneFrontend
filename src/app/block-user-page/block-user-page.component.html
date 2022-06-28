@@ -1,0 +1,27 @@
+<div class="containers">
+
+  <div *ngIf="isLoadUser">
+    <div class="centerContent">
+      <h3>Block user</h3>
+    </div>
+
+    <div *ngFor="let user of empList">
+      <app-block-card [user]="user" (changed)="changed($event)"></app-block-card>
+    </div>
+  </div>
+
+  <hr>
+
+  <div *ngIf="isLoadBlockUser">
+    <div class="centerContent" style="margin-top: 50px;">
+      <h3>Unblock user</h3>
+    </div>
+
+    <div *ngFor="let user of blockEmpList">
+      <app-unblock-user-card [user]="user" (blockUserEvent)="blockUserEvent($event)"></app-unblock-user-card>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,63 @@
+<div class="oneComentCard">
+  <div class="card">
+    <div class="d-flex flex-row comment-row m-t-0">
+      <div class="p-2" *ngIf="!userComment.avatar">
+        <img src="../assets/images/imagesav.png" alt="userAvatar" width="50" class="rounded-circle">
+      </div>
+      <div class="p-2" *ngIf="userComment.avatar">
+        <img src={{userComment.avatar}} alt="userAvatar" width="50" class="rounded-circle">
+      </div>
+
+      <div class="comment-text w-100">
+        <h6>@{{userComment.username}}</h6>
+
+        <div>
+          <p class="card-text test">{{comment.text}}</p>
+        </div>
+
+
+        <div class="comment-footer">
+          <a class="card-link hoverIcon blue-text" (click)="likeBtn(comment.commentId)"><mdb-icon far icon="thumbs-up" class="blue-text"></mdb-icon></a>
+          <a class="card-link blue-text">{{karma.karma}}</a>
+          <a class="card-link blue-text" (click)="dislikeBtn(comment.commentId)"><mdb-icon far icon="thumbs-down" class="blue-text"></mdb-icon></a>
+
+          <a class="card-link blue-text" (click)="report()"><mdb-icon far icon="flag" class="blue-text"></mdb-icon> Report</a>
+        </div>
+
+        <div class="card-footer" *ngIf="divReportReason">
+          <div class="centerDiv">
+
+            <select [(ngModel)]="selected" class="form-select form-select-lg mb-3 blue-text" style="margin-left: 5px; border: 1px solid; border-color: info;"  >
+              <option value="BREAKES_RULES">BREAKES RULES</option>
+              <option value="HARASSMENT">HARASSMENT</option>
+              <option value="HATE">HATE</option>
+              <option value="SHARING_PERSONAL_INFORMATION">SHARING PERSONAL INFORMATION</option>
+              <option value="IMPERSONATION">IMPERSONATION</option>
+              <option value="COPYRIGHT_VIOLATION">COPYRIGHT VIOLATION</option>
+              <option value="TRADEMARK_VIOLATION">TRADEMARK VIOLATION</option>
+              <option value="SPAM">SPAM</option>
+              <option value="SELF_HARM_OR_SUICIDE">SELF HARM OR SUICIDE</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+
+
+          </div>
+
+
+          <div class="centerDiv">
+            <button (click)="submitReport(comment.commentId)" class="blue-text" style="border: 1px solid ; border-color: info;">REPORT</button>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+
+
+
+  <div class="col-md-6 gedf-main container" style="margin-top: 20px;">
+    <div class="card gedf-card" *ngFor="let post of postList" style="margin-bottom: 20px;">
+      <div class="card-header">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="mr-2" *ngIf="!user.avatar">
+              <img class="rounded-circle" width="45" src="../assets/images/imagesav.png" alt="">
+            </div>
+            <div class="mr-2" *ngIf="user.avatar">
+              <img class="rounded-circle" width="45" src={{user.avatar}} alt="">
+            </div>
+            <div class="ml-2" *ngIf="!user.displayName">
+              <div class="h5 m-0"><p>{{"@" + user.username}}</p>
+              </div>
+            </div>
+
+            <div class="ml-2" *ngIf="user.displayName">
+              <div class="h5 m-0"><p>{{"@" + user.displayName}}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <div class="centerDiv">
+            <div class="imageDiv">
+              <img src={{post.imagePath}} alt="">
+            </div>
+          </div>
+
+
+        <p class="card-text">{{post.text}}</p>
+      </div>
+
+      <div class="form-group card-header" *ngIf="this.isButtonVisible">
+        <h5><b>Change post text</b></h5>
+        <input type="text" class="form-control item" name="postText"  id="postText" [(ngModel)] = "post.text">
+        <button class="blueBtn" (click)="changeTextSumbit(post)">SUBMIT</button>
+      </div>
+
+      <div class="form-group card-header" *ngIf="this.isButtonVisible1">
+        <h5 ><b>Change post title</b></h5>
+        <input type="text" class="form-control item" name="postTitle"  id="postTitle" [(ngModel)] = "post.title" >
+        <button  class="blueBtn" (click)="changeTitleSumbit(post)">SUBMIT</button>
+      </div>
+
+
+      <div class="card-footer">
+        <div class="centerContent">
+          <button (click)="izmenaNaslova()" class="blueBtn">CHANGE TITLE</button>
+          <button (click)="izmenaTexta()" class="blueBtn">CHANGE TEXT</button>
+          <button (click)="deletePost(post.postId)" class="redBtn">DELETE</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+

@@ -1,0 +1,17 @@
+
+<div class="containers">
+
+  <div *ngIf="isLoadUser">
+    <div class="centerContent">
+      <h3>Block moderators</h3>
+    </div>
+
+    <div *ngFor="let moderator of empList">
+      <app-block-card-moderators [moderator]="moderator" (changed)="changed($event)"></app-block-card-moderators>
+    </div>
+  </div>
+
+  <hr>
+
+</div>
+

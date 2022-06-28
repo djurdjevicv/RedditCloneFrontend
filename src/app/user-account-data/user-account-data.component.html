@@ -1,0 +1,57 @@
+<div class="registration-form">
+  <form [formGroup]="userForm" novalidate>
+    <div class="centerDiv">
+      <h2>Account data</h2>
+    </div>
+      <div class="form-group">
+          <input type="text" class="form-control item" formControlName="email"  [(ngModel)] = "user.email" name="email"  id="email" placeholder="Email" [readonly] = "isReadOnly">
+          <div *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched" class="alert alert-danger">
+            <div *ngIf="userForm.controls['email'].errors?.['required']">Email is required.</div>
+            <div *ngIf="userForm.controls['email'].errors?.['pattern']">Email must like example@gmail.com</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control item" [(ngModel)] = "user.displayName" name="displayName" id="displayName" [readonly] = "isReadOnly" placeholder="Display name">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control item" [(ngModel)] = "user.description" name="description" id="description" [readonly] = "isReadOnly" placeholder="Description">
+      </div>
+
+      <div class="custom-file" *ngIf="!isReadOnly">
+        <input name="avatar" #avatarInput accept="image/*" (change)="processFile(avatarInput)"  mdbInput id="inputAvatar" placeholder="Avatar" type="file" class="custom-file-input" id="customFileLang">
+        <label class="custom-file-label" for="customFileLang">Choose avatar</label>
+      </div>
+
+
+      <div class="centerDiv" *ngIf="user.avatar">
+        <div class="imageDiv">
+          <img width="45px" src={{user.avatar}} alt="">
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+          <button type="button" class="btn btn-block create-account" (click)="submit(user.userId)" >{{btnValue}}</button>
+      </div>
+  </form>
+  <div class="social-media">
+    <div class="containerKarma">
+      <div class="postKarma">
+        <h5>Post karma</h5>
+        <div >
+          <mdb-icon fas icon="thumbs-up" class="prefix grey-text"></mdb-icon>
+          <p>{{postKarma.karma}}</p>
+          <mdb-icon fas icon="thumbs-down" class="prefix grey-text"></mdb-icon>
+        </div>
+
+      </div>
+      <div class="commentKarma">
+        <h5>Comment karma</h5>
+        <mdb-icon fas icon="thumbs-up" class="prefix grey-text"></mdb-icon>
+        <p>{{commentKarma.karma}}</p>
+        <mdb-icon fas icon="thumbs-down" class="prefix grey-text"></mdb-icon>
+      </div>
+    </div>
+  </div>
+</div>

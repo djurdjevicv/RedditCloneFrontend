@@ -1,0 +1,35 @@
+    <div class="registration-form">
+        <form [formGroup]="requiredForm" novalidate>
+          <div class="centerDiv">
+            <h2>Add community</h2>
+          </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" name="name" formControlName="name" [(ngModel)] = "newCommunity.name" id="name" placeholder="Community name">
+            </div>
+
+            <div *ngIf="requiredForm.controls['name'].invalid && requiredForm.controls['name'].touched" class="alert alert-danger">
+              <div *ngIf="requiredForm.controls['name'].errors?.['required']">Community name is required.</div>
+            </div>
+
+
+            <div class="form-group">
+                <input type="text" class="form-control item" formControlName="description" name="description" [(ngModel)] = "newCommunity.description" id="description" placeholder="Description">
+            </div>
+
+            <div *ngIf="requiredForm.controls['description'].invalid && requiredForm.controls['description'].touched" class="alert alert-danger">
+              <div *ngIf="requiredForm.controls['description'].errors?.['required']">Description is required.</div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-block create-account" (click)="btnCreateCommunity()">Create community</button>
+            </div>
+        </form>
+        <div class="social-media">
+
+        </div>
+    </div>
+
+
+
+
+

@@ -1,0 +1,48 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark orange" [containerInside]="false">
+
+  <mdb-navbar-brand>
+    <a class="navbar-brand" href="#"><img src="../assets/images/reddit_logo.png" alt="">Reddit</a>
+  </mdb-navbar-brand>
+
+  <links>
+
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="blockUser">Block user</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="reportComment">Report comment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="blockPost">Report post</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="moderatorCommunity">Your community</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link waves-light" routerLink="/addCommunity" mdbWavesEffect>Add community</a>
+      </li>
+
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <a class="dropdown-item" href="#" routerLink="/userAccountData">Your profile</a>
+              <a class="dropdown-item" href="#" routerLink="/changePassword">Change password</a>
+              <a class="dropdown-item" href="#" (click)="logOut()">Log out</a>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </links>
+
+</mdb-navbar>
+
+<router-outlet></router-outlet>

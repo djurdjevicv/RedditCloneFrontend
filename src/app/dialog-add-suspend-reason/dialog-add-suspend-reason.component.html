@@ -1,0 +1,27 @@
+<mat-dialog-content>
+
+
+  <div class="modal-header">
+    <h4 class="modal-title" id="exampleModalLabel">Suspend reason</h4>
+    <button type="button" class="close" (click)="closeDialog()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="suspendReasonForm" novalidate>
+      <div class="form-group">
+        <label for="bannedReason" class="col-form-label">Suspend reason:</label>
+        <textarea class="form-control" formControlName="bannedReason" name="bannedReason" id="bannedReason" [(ngModel)] = "banned.bannedReason" style="width: 400px;"></textarea>
+        <div *ngIf="suspendReasonForm.controls['bannedReason'].invalid && suspendReasonForm.controls['bannedReason'].touched" class="alert alert-danger">
+          <div *ngIf="suspendReasonForm.controls['bannedReason'].errors?.['required']">Suspend reason is required.</div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeDialog()">Close</button>
+    <button type="button" class="btn btn-primary" (click)="addCommunityRules()">Suspend community</button>
+  </div>
+
+
+</mat-dialog-content>

@@ -1,0 +1,15 @@
+.centerDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.oneCommunity{
+  cursor: pointer;
+}
+
+li:hover{
+  color: orange;
+}

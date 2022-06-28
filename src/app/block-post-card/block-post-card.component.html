@@ -1,0 +1,55 @@
+<div class="col-md-6 gedf-main container" >
+  <div class="card gedf-card">
+    <div class="card-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="mr-2" *ngIf="!user.avatar">
+            <img src="../assets/images/imagesav.png" alt="userAvatar" width="50" class="rounded-circle">
+          </div>
+          <div class="mr-2" *ngIf="user.avatar">
+            <img src={{user.avatar}} alt="userAvatar" width="50" class="rounded-circle">
+          </div>
+
+          <div class="ml-2">
+            <div class="h5 m-0" >@{{user.username}}</div>
+            <br>
+            <p routerLink="communityPage">@{{community.name}}</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><b>{{post.title}}</b></h5>
+        <div class="centerDiv">
+          <div class="imageDiv">
+            <img src={{post.imagePath}} alt="">
+          </div>
+        </div>
+
+
+      <p class="card-text">{{post.text}}</p>
+    </div>
+
+    <div class="card-footer">
+
+      <div class="btnCont">
+        <h6>Reported by: <b>@{{reportBy.username}}</b></h6>
+      </div>
+
+      <div class="btnCont">
+        <h6>Reported reason: <b>{{reportPost.reason}}</b></h6>
+      </div>
+
+    </div>
+
+    <div class="card-footer">
+      <div class="btnCont">
+        <button (click)="acceptReport(reportPost.reportId)" class="sub">ACCEPT</button>
+        <button (click)="declineReport(reportPost.reportId)" class="cnc">DECLINE</button>
+      </div>
+
+    </div>
+  </div>

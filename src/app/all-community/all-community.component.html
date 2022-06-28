@@ -1,0 +1,8 @@
+
+<div class="centerDiv">
+  <ul class="list-group" style="width: 400px;">
+    <li class="list-group-item oneCommunity" *ngFor="let community of listCommunity" (click)="goToCommunity(community.communityId)" >{{community.name}}</li>
+  </ul>
+</div>
+
+

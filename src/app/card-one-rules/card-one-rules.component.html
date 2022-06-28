@@ -1,0 +1,23 @@
+
+<div *ngIf="loadCommunityRules">
+
+  <div class="container list-group"  *ngFor="let rule of rules">
+    <div class="row">
+      <div class="col-sm">
+        <input class="list-group-item list-group-item-action" [(ngModel)] = "rule.description" [readonly] = "isReadOnly" >
+      </div>
+
+      <div class="col-sm center" *ngIf="moderator">
+        <button style="height: 95%; margin-right:3px;" (click)="btnChange(rule)">{{btnVal}}</button>
+        <button style="height: 95%;" (click)="btnDelete(rule)">DELETE</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+

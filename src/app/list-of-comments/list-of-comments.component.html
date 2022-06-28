@@ -1,0 +1,21 @@
+
+<div class="gedf-main container">
+
+    <div class="card gedf-card" style="margin-bottom: 8px;" *ngFor="let comment of commentList" >
+      <app-comment-card [comment]="comment"  (changed)="changed($event)"></app-comment-card>
+    </div>
+
+</div>
+
+
+<div class="commentDiv" *ngIf="!blockUser">
+
+  <div class="form-group " style="padding: 10px;">
+    <input class="form-control" name="textComment" [(ngModel)] = "newComment.text" id="textComment" style="width: 100%;"  placeholder="Your comment"/>
+  </div>
+
+  <div class="center">
+    <button (click)="btnAddComment()">ADD COMMENT</button>
+  </div>
+
+</div>

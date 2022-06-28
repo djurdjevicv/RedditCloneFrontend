@@ -1,0 +1,26 @@
+.navigationBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px, solid, black;
+  padding: 5px;
+}
+
+button{
+  background-color: blue;
+  color: white;
+  padding: 7px 20px;
+  font-size: 16px;
+  border: none;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.informationCard{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18rem;
+}
+

@@ -1,0 +1,48 @@
+
+.blueBtn {
+  text-align: center;
+  text-decoration: none;
+  padding: 5px 30px;
+  font-size: 16px;
+  border-radius: 500px;
+  border-color: blue;
+  background-color: white;
+  color: blue;
+  margin-right: 2px;
+  margin-top: 10px;
+}
+
+.redBtn{
+  text-align: center;
+  text-decoration: none;
+  padding: 5px 30px;
+  font-size: 16px;
+  border-radius: 500px;
+  border-color: red;
+  background-color: white;
+  color: red;
+  margin-right: 2px;
+  margin-top: 10px;
+}
+
+.centerContent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img{
+  max-width: 500px;
+  max-height: 200px;
+}
+
+.centerDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+

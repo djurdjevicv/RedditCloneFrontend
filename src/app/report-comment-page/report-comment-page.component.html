@@ -1,0 +1,22 @@
+
+
+<div class="mainContainer">
+  <div class="title">
+    <h3>Reported comment</h3>
+  </div>
+
+
+
+  <div *ngFor="let reportComment of reportedCommentList">
+    <app-report-comment-card [reportComment]="reportComment" (changed)="changed($event)"></app-report-comment-card>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+

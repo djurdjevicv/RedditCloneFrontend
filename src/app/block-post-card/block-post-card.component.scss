@@ -1,0 +1,76 @@
+.h7 {
+  font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+  margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+  .gedf-main {
+      padding-left: 4rem;
+      padding-right: 4rem;
+  }
+  .gedf-card {
+      margin-bottom: 2.77rem;
+  }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+  content: none;
+  display: none;
+}
+
+.container{
+  margin-top: 5px;
+}
+
+.joinBtn{
+  text-align: center;
+  text-decoration: none;
+  padding: 5px 15px;
+  font-size: 16px;
+  border-radius: 500px;
+  border-color: blue;
+  background-color: blue;
+  color: white;
+}
+
+button{
+  text-align: center;
+  text-decoration: none;
+  padding: 5px 30px;
+  font-size: 16px;
+  border-radius: 500px;
+}
+
+.cnc{
+  border-color: red;
+  color: red;
+  margin-left: 5px;
+}
+
+.sub{
+  border-color: green;
+  color: green;
+}
+
+.btnCont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img{
+  max-width: 500px;
+  max-height: 200px;
+}
+
+.centerDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

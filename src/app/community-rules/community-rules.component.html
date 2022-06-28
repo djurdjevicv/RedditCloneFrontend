@@ -1,0 +1,13 @@
+
+<div class="containers">
+  <div class="centerContent">
+    <h3>Community rules</h3>
+  </div>
+
+    <app-card-one-rules ></app-card-one-rules>
+
+  <div *ngIf="moderator" class="centerContent" (click)="openDialog()">
+    <button>Add rules</button>
+  </div>
+</div>
+

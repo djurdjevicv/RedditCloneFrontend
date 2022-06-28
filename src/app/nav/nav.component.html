@@ -1,0 +1,4 @@
+<app-navigation-bar *ngIf="!moderator && !admin && !user"></app-navigation-bar>
+<app-navigation-bar-admin *ngIf="admin"></app-navigation-bar-admin>
+<app-navigation-bar-moderator *ngIf="moderator"></app-navigation-bar-moderator>
+<app-navigation-bar-user *ngIf="user"></app-navigation-bar-user>

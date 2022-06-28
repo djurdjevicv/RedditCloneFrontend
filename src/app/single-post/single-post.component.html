@@ -1,0 +1,80 @@
+<div class="card-header">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="mr-2" *ngIf="!user.avatar">
+        <img class="rounded-circle" width="45" src="../assets/images/imagesav.png" alt="">
+      </div>
+      <div class="mr-2" *ngIf="user.avatar">
+        <img class="rounded-circle" width="45" src={{user.avatar}} alt="">
+      </div>
+
+      <div class="ml-2">
+        <div class="h5 m-0" *ngIf="user.displayName">
+          <p>{{"@" + user.displayName}}</p>
+        </div>
+        <div class="h5 m-0" *ngIf="!user.displayName">
+          <p>{{"@" + user.username}}</p>
+        </div>
+        <a (click)="communityClick(post.community)" >{{"@" + community.name}}</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div class="card-body" (click)="commentClick(post.postId)" style="cursor: pointer;">
+    <h6>Flair: {{flair.name}}</h6>
+    <hr style="width: 100%;">
+    <h5 class="card-title"><b>{{post.title}}</b></h5>
+
+    <div class="centerDiv">
+      <div class="imageDiv">
+        <img src={{post.imagePath}} alt="">
+      </div>
+    </div>
+
+
+
+
+  <p class="card-text">{{post.text}}</p>
+</div>
+<div class="card-footer">
+  <a class="card-link hoverIcon blue-text" (click)="likeBtn(post.postId)"><mdb-icon far icon="thumbs-up" class="blue-text"></mdb-icon></a>
+  <a class="card-link blue-text">{{karma.karma}}</a>
+  <a class="card-link blue-text" (click)="dislikeBtn(post.postId)"><mdb-icon far icon="thumbs-down" class="blue-text"></mdb-icon></a>
+
+  <a (click)="commentClick(post.postId)" class="card-link blue-text"><mdb-icon fas icon="comment" class="blue-text"></mdb-icon> Comment</a>
+
+  <a class="card-link blue-text" (click)="report()"><mdb-icon far icon="flag" class="blue-text"></mdb-icon> Report</a>
+
+
+
+</div>
+
+<div class="card-footer" *ngIf="divReportReason">
+  <div class="centerDiv">
+
+    <select [(ngModel)]="selected" class="form-select form-select-lg mb-3 blue-text" style="margin-left: 5px; border: 1px solid; border-color: info;"  >
+      <option value="BREAKES_RULES">BREAKES RULES</option>
+      <option value="HARASSMENT">HARASSMENT</option>
+      <option value="HATE">HATE</option>
+      <option value="SHARING_PERSONAL_INFORMATION">SHARING PERSONAL INFORMATION</option>
+      <option value="IMPERSONATION">IMPERSONATION</option>
+      <option value="COPYRIGHT_VIOLATION">COPYRIGHT VIOLATION</option>
+      <option value="TRADEMARK_VIOLATION">TRADEMARK VIOLATION</option>
+      <option value="SPAM">SPAM</option>
+      <option value="SELF_HARM_OR_SUICIDE">SELF HARM OR SUICIDE</option>
+      <option value="OTHER">OTHER</option>
+    </select>
+
+
+  </div>
+
+
+  <div class="centerDiv">
+    <button (click)="submitReport(post.postId)" class="blue-text" style="border: 1px solid ; border-color: info;">REPORT</button>
+  </div>
+
+</div>
+
+

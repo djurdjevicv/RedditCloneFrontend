@@ -1,0 +1,15 @@
+<div class="container list-group">
+  <div class="row">
+    <div class="col-sm">
+      <a class="list-group-item list-group-item-action">
+        Moderator display name: <b>{{moderator.displayName}}</b>, username: <b>{{moderator.username}}</b>
+      </a>
+    </div>
+
+    <div class="col-sm center" *ngIf="moderator.userId">
+      <button style="height:95%;" (click)="blockModerator(moderator.userId)" >BLOCK</button>
+    </div>
+  </div>
+</div>
+
+

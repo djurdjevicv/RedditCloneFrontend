@@ -1,0 +1,14 @@
+<div class="mainContainer">
+  <div class="title">
+    <h3>Reported posts</h3>
+  </div>
+
+  <div *ngFor="let reportPost of reportedPostsList">
+    <app-block-post-card [reportPost]="reportPost" (changed)="changed($event)"></app-block-post-card>
+  </div>
+
+
+
+</div>
+
+
